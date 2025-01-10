@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>CvSU Request Form</title>
     <meta name="keywords" content="CvSU Form Request, CvSU File Request">
     <meta name="description" content="CVSU Request Form It’s our business to know your business.">
     <meta name="author" content="Landing Page designer (Pascua) - Group RedRivon">
