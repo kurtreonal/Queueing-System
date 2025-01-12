@@ -9,7 +9,7 @@
 </head>
 <body>
     <form action="connection.php" method="POST">
-        Name: <input type="text" name="studentName" placeholder="Christian Bobo" required><br>
+        Name: <input type="text" name="studentName" placeholder="" required><br>
         Student Number: <input type="number" name="studentNum" placeholder="202300000"required><br>
         <input type="hidden" id="status" name="status" value="1">
         Request :<select id="cmbMake" name="request" required>
