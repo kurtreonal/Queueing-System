@@ -11,42 +11,44 @@
 <body>
 <?php include '../Classes/connection.php'; ?>
  	<header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow" style="background-color: #96968e;">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="adminPage.php">CvSU Bacoor Campus</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="adminPage.php" style="color: black;">CvSU Bacoor</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <form class="container-fluid" action="./search.php" method="GET">
       <div class="input-group">
-        <input class="form-control form-control-dark w-75" type="text" placeholder="WHAT ARE YOU LOOKING FORS?" aria-label="Search" name="search" required style="background-color: #c4c3bf !important;!i;!;">
+        <input class="form-control form-control-dark w-75" type="text" placeholder="WHAT ARE YOU LOOKING FOR?" aria-label="Search" name="search" required style="background-color: #c4c3bf !important;!i;!;">
         <input type="submit" name="submit" value="Search" class="btn btn-outline-dark text-white"/>
       </div>
     </form>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="../index_login.php" onclick="return confirm('Are you sure you would like to Sign out?')">Sign out</a>
+        <a class="nav-link px-3" href="../index_login.php" onclick="return confirm('Are you sure you would like to Sign out?')">
+          <img src="../Assets/icon-logout40.png" alt="broken icon img">
+        </a>
       </div>
     </div>
     </header>
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-        <div class="position-sticky pt-3">
+        <div class="position-sticky pt-5">
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="../Classes/adminPage.php">
-                <span><i class="fa-solid fa-house-user"></i></span>
+                <span><i class="fa-solid fa-house-user fa-xl" style="margin-right: 20%;"></i></span>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="data.php">
-                <span><i class="fa-solid fa-users"></i></span>
+                <span><i class="fa-solid fa-users fa-xl" style="margin-right: 20%;"></i></span>
                 Data
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="users.php">
-                <span><i class="fa-solid fa-layer-group"></i></span>
+                <span><i class="fa-solid fa-layer-group fa-xl" style="margin-right: 20%;"></i></span>
                 Users
               </a>
             </li>

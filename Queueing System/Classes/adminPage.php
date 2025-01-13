@@ -35,8 +35,8 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-3 mb-3">
-            <div class="card bg-dark text-white h-100" style="background-color: #969590 !important;">
-            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal; color: #fff; font-size: 30px;">Queuing Data</div>
+            <div class="card bg-dark text-white h-100" style="background-color: #969590 !important; ">
+            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal;color: #fff;font-size: 30px;margin-bottom: 15% !important;!i;!;">Queuing Data</div>
                 <div class="card-footer d-flex" onclick="location.href='../Classes/landingPage.php';" style="cursor: pointer;">
                     <u><b>View Details</b></u>
                     <span class="ms-auto">
@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-3 mb-3">
             <div class="card bg-secondary text-white h-100" style="background-color: #aea19b !important;!i;!;">
-            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal; color: #fff; font-size: 30px;">Users</div>
+            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal;color: #fff;font-size: 30px;margin-bottom: 15%;">Users</div>
                 <div class="card-footer d-flex" onclick="location.href='../Classes/landingPage.php';" style="cursor: pointer;">
                     <u><b>View Details</b></u>
                     <span class="ms-auto">
