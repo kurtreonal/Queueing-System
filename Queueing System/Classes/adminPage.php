@@ -1,8 +1,24 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    // If not logged in, redirect to the login page
+    header('Location: http://localhost/Queueing%20System/Classes/login.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="CvSU Form Request, CvSU File Request">
+    <meta name="description" content="CVSU Request Form It’s our business to know your business.">
+    <meta name="author" content="Admin Page designer (Pascua) - Group RedRivon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Assets/cvsulogo.png" type="image/x-icon">
     <title>Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
@@ -36,8 +52,8 @@
             <div class="row">
             <div class="col-md-3 mb-3">
             <div class="card bg-dark text-white h-100" style="background-color: #969590 !important; ">
-            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal;color: #fff;font-size: 30px;margin-bottom: 15% !important;!i;!;">Queuing Data</div>
-                <div class="card-footer d-flex" onclick="location.href='../Classes/landingPage.php';" style="cursor: pointer;">
+            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal;color: #fff;font-size: 30px;margin-bottom: 15% !important;!i;!;">Documents for Processing</div>
+                <div class="card-footer d-flex" onclick="location.href='../Classes/users_table.php';" style="cursor: pointer;">
                     <u><b>View Details</b></u>
                     <span class="ms-auto">
                     <i class="fa-solid fa-chevron-right"></i>
@@ -47,8 +63,8 @@
             </div>
             <div class="col-md-3 mb-3">
             <div class="card bg-secondary text-white h-100" style="background-color: #aea19b !important;!i;!;">
-            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal;color: #fff;font-size: 30px;margin-bottom: 15%;">Users</div>
-                <div class="card-footer d-flex" onclick="location.href='../Classes/landingPage.php';" style="cursor: pointer;">
+            <div class="card-body py-5" style="padding-top: 15px !important;!i;!;font-family: &quot;Spectral&quot;, serif;font-weight: 200;font-style: normal;color: #fff;font-size: 30px;margin-bottom: 15%;">Messages</div>
+                <div class="card-footer d-flex" onclick="location.href='../Classes/messages.php';" style="cursor: pointer;">
                     <u><b>View Details</b></u>
                     <span class="ms-auto">
                     <i class="fa-solid fa-chevron-right"></i>

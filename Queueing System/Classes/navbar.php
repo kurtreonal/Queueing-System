@@ -23,7 +23,7 @@
     </form>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="../index_login.php" onclick="return confirm('Are you sure you would like to Sign out?')">
+        <a class="nav-link px-3" href="logout.php" onclick="return confirm('Are you sure you would like to Sign out?')">
           <img src="../Assets/icon-logout40.png" alt="broken icon img">
         </a>
       </div>
@@ -41,15 +41,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="data.php">
+              <a class="nav-link" href="users_table.php">
                 <span><i class="fa-solid fa-users fa-xl" style="margin-right: 20%;"></i></span>
                 Data
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="users.php">
+              <a class="nav-link" href="messages.php">
                 <span><i class="fa-solid fa-layer-group fa-xl" style="margin-right: 20%;"></i></span>
-                Users
+                Messages
               </a>
             </li>
           </ul>

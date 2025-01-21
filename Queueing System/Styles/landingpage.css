@@ -1,438 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Work Sans", serif;
 }
 
 body {
-  background-image: url("../Assets/cvsuBG-blurredWcolor.png");
+  background-image: url("../Assets/resized!!!!.png");
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
-background-position: center center;
+background-position: 0px -40px;
 }
 
-.container {
+.nav {
   max-width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 3%;
-  z-index: 999;
-  position: relative;
 }
 
-.table-container {
-  display: table;
-  margin: auto;
-  margin-top: 10%;
-  margin-left: 7%;
-}
-
-.table-container1 {
-  display: table;
-  margin: auto;
-  margin-top: 2%;
-  margin-right: 7%;
-}
-
-.table-logo {
-  position: relative;
-}
-
-.image-size {
-  width: 110%;
-}
-
-.table-text {
-  position: relative;
-}
-
-br {
-  display: block; /* makes it have a width */
-  content: ""; /* clears default height */
-  margin-top: -40px; /* change the height of <br> */
-}
-
-h1 {
-  font-size: 100%;
-  word-break: break-all;
-}
-
-strong {
-  font-weight: 300;
-}
-
-.a-content{
-  font-size: 105px;
-  text-align: right;
-  color: white;
-  font-family: "Spectral", serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.b-content {
+.CVSU {
   font-size: 30px;
-  text-align: right;
-  color: white;
-  font-family: "Roboto Flex", serif;
-  font-style: normal;
+  color: #706738;
+  user-select: none;
+  margin-right: 10%;
+  font-weight: bold;
+  display: table;
+  margin-left: -20%;
+  margin-top: 45px;
+}
+
+.nav-logo {
+  height: auto;
+  margin-top: 10px;
+  display: table;
+  margin-right: 5%;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 22px;
+  color: #706738;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 45px;
+  margin-top: 20px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #FFD700;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+
+}
+
+.navigation a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #ffffff;
+}
+
+.content h1 {
+  margin-top: 80px;
+  font-size: 6.5em;
+
+}
+
+.content p {
+  margin: 20px auto;
+  font-weight: 300;
+  line-height: 25px;
 }
 
 button {
-  display: inline-block;
-  outline: none;
+  position: relative;
+  width: 15%;
+  padding: 15px;
+  text-align: center;
+  margin: 10px 5px;
+  border-radius: 40px;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  color: rgb(255, 255, 255);
   cursor: pointer;
-  padding: 5px 30px;
-  background-color: #ffffff;
-  border-radius: 3.25rem;
-  border: 1px solid #ffffff;
-  color: black;
+  background-color: rgba(0, 0, 0, 0);
   font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
-  text-align: center;
-  right: -65%;
-  position: relative;
-  bottom: -25px;
-  transition: all 0.4s ease-in-out;
 }
 
-button:hover {
-  background-color: #1b651b;
-  color: white;
-}
-
-.content-box-heading:hover {
-  color: #1b651b;
-}
-
-.content-box-heading{
-  transition: color .4s ease;
-}
-
-/*Footer*/
-footer{
-  background: rgb(255, 255, 255, -0.1);
-  height: auto;
-  position: relative;
-  z-index: 999;
-}
-
-.f-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.socials {
-  list-style: none;
-  display: flex;
-}
-
-.socials li {
-  margin: 0 20px;
-}
-.socials a{
-  text-decoration: none;
-  color: #fff;
-}
-.socials a i{
-  font-size: 2.1rem;
-  transition: color .4s ease;
-}
-.socials a:hover i{
-  color: #1b651b;
-}
-.footer-bottom{
-  padding: 20px 0;
-  text-align: center;
+h3 {
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  margin-top: 800%;
 }
 
 @media only screen and (max-width: 1220px) {
-  .a-content {
-    font-size: 110px;
-  }
 
-  .b-content {
-    font-size: 20px;
-  }
-
-  .image-size {
-    width: 91%;
-  }
 }
 
 @media only screen and (max-width: 1158px) {
-  .a-content {
-    font-size: 100px;
+  .CVSU {
+    margin-left: -20%;
   }
 
-  .table-container{
-    margin-top: 11%;
+  .navigation a {
+    margin-left: 20px;
   }
 
-  .table-container1 {
-    margin-top: 6%;
+  body {
+    background-position: 0px -15px;
   }
 }
 
 @media only screen and (max-width: 1088px) {
-  .a-content {
-    font-size: 90px;
-  }
 
-  button{
-    padding: 4px 30px;
-    font-size: 15px;
-  }
-
-  .table-container{
-    margin-top: 12%;
-  }
-
-  .table-container1 {
-    margin-top: 7%;
-  }
 }
 
 @media only screen and (max-width: 1016px) {
-  .a-content {
-    font-size: 85px;
-}
-.b-content {
-  font-size: 17px;
-}
-.image-size {
-  width: 75%;
-}
+  .CVSU {
+    margin-left: -25%;
+    font-size: 25px;
+  }
 
-.table-container{
-  margin-top: 13%;
-}
+  .nav-logo{
+    width: 25%;
+    margin-left: 5%;
+  }
 
-.table-container1 {
-  margin-top: 8%;
-}
+  .navigation a {
+    font-size: 17px;
+  }
 }
 
 @media only screen and (max-width: 981px) {
-  .a-content {
-    font-size: 80px;
-  }
-  .b-content {
-    font-size: 17px;
-  }
-  .image-size {
-    width: 80%;
-  }
-  button{
-    padding: 3px 20px;
-    font-size: 14px;
-  }
+  .CVSU {
+    margin-left: -30%;
+    font-size: 20px;
+}
+
+.navigation a {
+  font-size: 15px;
+}
+
+body {
+  background-position: 0px 0px
+}
 }
 
 @media only screen and (max-width: 973px) {
-  .a-content {
-    font-size: 75px;
-  }
-  .b-content {
-    font-size: 15px;
-  }
-  .img-container {
-    height: 500px;
-  }
 
-  .image-size {
-    width: 70%;
-  }
-
-  button {
-    padding: 5px 27px;
-    font-size: 15px;
-  }
-
-  footer{
-    top: 50px;
-  }
 }
 
 @media only screen and (max-width: 878px){
-  .a-content {
-    font-size: 65px;
-  }
 
-  .image-size {
-    width: 70%;
-  }
-
-  br {
-    margin-top: -25px;
-  }
-
-  button {
-    padding: 3px 20px;
-    font-size: 13px;
-  }
 }
 
 @media only screen and (max-width: 865px) {
 
-  .image-size {
-    width: 70%;
-  }
-
-  .a-content {
-    font-size: 60px;
-  }
-.b-content {
-  font-size: 15px;
-  }
 }
 
 @media only screen and (max-width: 840px){
-  .a-content{
-    font-size: 60px;
-  }
+  .CVSU {
+    margin-left: -30%;
+    font-size: 20px;
+}
 
-  .b-content {
-    font-size: 15px;
-  }
+.navigation a {
+  font-size: 15px;
+}
 
-  button{
-    padding: 2px 14px;
-    font-size: 13px;
-  }
-
-  br {
-    margin-top: -25px;
-  }
+body{
+  background-position: 0px 30px;
+}
 }
 
 @media only screen and (max-width: 809px){
-  .image-size {
-    width: 60%;
-}
 
-.a-content {
-  font-size: 55px;
-}
-
-.b-content {
-  font-size: 13px;
-}
-
-button {
-  padding: 1px 10px;
-  font-size: 10px;
-}
-
-.socials a i {
-  font-size: 1.8rem;
-}
-
-br {
-  margin-top: 0px;
-}
 }
 @media only screen and (max-width: 624px){
-  .a-content {
-    font-size: 45px;
-}
 
-br{
-  margin-top: 0px;
-}
 }
 @media only screen and (max-width: 618px){
-  .container {
-    display: table;
-  }
 
-  .table-logo {
-    display: flex;
-    justify-content: center;
-  }
-
-  .table-container {
-    display: flex;
-    justify-content: center;
-    margin-left: 0px;
-  }
-
-  .table-container1{
-    display: flex;
-    justify-content: center;
-    margin-right: 5%;
-    margin-left: 5%;
-  }
-
-  br {
-    display: none;
-  }
-
-  .a-content {
-    text-align: center;
-  }
-
-  .b-content{
-    text-align: center;
-  }
-
-  button {
-    right: -40%;
-  }
 }
 
 @media only screen and (max-width: 566px){
-  .a-content {
-    font-size: 40px;
-}
 
-.image-size {
-  width: 50%;
-}
-
-  .socials a i {
-    font-size: 1.3rem;
-}
 }
 
 @media only screen and (max-width: 500px){
-  .container {
-    display: table;
-  }
 
-  .table-logo {
-    display: flex;
-    justify-content: center;
-    margin-left: 0px;
-  }
-
-  .table-container1{
-    display: flex;
-    justify-content: center;
-    margin-right: 0px;
-  }
-
-  br {
-    display: none;
-  }
-
-  .a-content {
-    text-align: center;
-  }
-
-  .b-content{
-    text-align: center;
-  }
-
-  button {
-    right: -40%;
-  }
 }

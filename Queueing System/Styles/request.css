@@ -1,0 +1,45 @@
+.card-body {
+    width: 70%;
+    background-color: rgba(37, 31, 18, 0.4);
+    box-shadow: 0 2px 12px rgba(32, 32, 32, 0.4);
+    border-radius: 12px;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+form {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+h2 {
+    text-align: center;
+    color: #E4E5D5;
+}
+label {
+    color: #E4E5D5;
+}
+input.form-control, select.form-control {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #9fafab;
+    border-radius: 14px;
+    background-color: #f9faf4;
+}
+.btn-primary {
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #413A2D;
+    font-size: 12px;
+    border: 1px solid #3B3018;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn-primary:hover {
+    background-color: #79684D;
+}

@@ -24,4 +24,19 @@ if (isset($_POST['save'])){
         echo "<script language= 'javascript'>alert('Proceeding to Wait list'); </script>";
         echo "<script>window.location.href='popup_waiting.php'; </script>"; //gives an alert
 }
-?>
+
+// Handling save for contact form
+if (isset($_POST['savecontact'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+
+        $query = mysqli_query($con, "INSERT INTO contact (name, email, phone, subject_line, message)
+        VALUES ('$name', '$email', '$phone', '$subject', '$message')");
+
+        echo "<script language='javascript'>alert('Message Sent!');</script>";
+        echo "<script>window.location.href='landingpage.php';</script>";
+    }
+    ?>

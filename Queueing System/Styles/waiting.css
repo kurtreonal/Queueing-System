@@ -1,0 +1,177 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../Assets/resized!!!!.png");
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: 0px -40px;
+}
+
+.myreq{
+    margin: auto;
+    text-align: center;
+    color: #E4E5D5;
+
+    width: 70%;
+    background-color: rgba(37, 31, 18, 0.4);
+    box-shadow: 0 2px 12px rgba(32, 32, 32, 0.4);
+    border-radius: 12px;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.myreq h2{
+    font-size: 35px;
+    margin-top: 3%;
+}
+.myreq h4{
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+.container-fluid h3{
+    font-size: 1.8rem;
+    position: absolute;
+    padding-top: 10px;
+}
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+p{
+    font-size: 7rem;
+}
+div {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+@keyframes top-clip {
+    0%{}
+    50%{transform: translateY(21px);}
+    100%{transform: translateY(21px);}
+}
+
+@keyframes bottom-sand-path {
+    0%{}
+    50%{transform: translateY(0);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes bottom-sand-g {
+    0%{}
+    85%{transform: translateY(0);}
+    100%{transform: translateY(-9px);}
+}
+
+@keyframes hourglass-rotation {
+    50%{transform: rotateZ(0);}
+    100%{transform: rotateZ(180deg);}
+}
+#top-sand #top-clip-path rect,
+#bottom-sand path,
+#bottom-sand g,
+svg {
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+#top-sand #top-clip-path rect {
+    animation-name: top-clip;
+}
+
+#bottom-sand path {
+    transform: translateY(21px);
+    animation-name: bottom-sand-path;
+}
+
+#bottom-sand g {
+    animation-name: bottom-sand-g;
+}
+
+svg {
+    animation-name: hourglass-rotation;
+}
+button {
+    position: relative;
+    width: 15%;
+    padding: 15px;
+    text-align: center;
+    margin: 10px 5px;
+    border-radius: 40px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 20px;
+  }
+
+
+  .nav {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .CVSU {
+    font-size: 30px;
+    color: #706738;
+    user-select: none;
+    margin-right: 10%;
+    font-weight: bold;
+    display: table;
+    margin-left: -30%;
+    margin-top: 45px;
+  }
+
+  .nav-logo {
+    height: auto;
+    margin-top: 10px;
+    display: table;
+    margin-right: 5%;
+  }
+
+  .navigation a {
+    position: relative;
+    font-size: 22px;
+    color: #706738;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 45px;
+    margin-top: 20px;
+  }
+
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #FFD700;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+  }
+
+  .navigation a:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+  }
