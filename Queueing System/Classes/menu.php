@@ -1,9 +1,9 @@
 <?php
-session_start(); // Start the session
+session_start(); //Start the session
 
-// Check if the user is logged in
+//Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    // If not logged in, redirect to the login page
+    //If not logged in, redirect to the login page
     header('Location: http://localhost/Queueing%20System/Classes/login.php');
     exit();
 }

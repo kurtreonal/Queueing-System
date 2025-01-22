@@ -55,7 +55,7 @@ if (!isset($_SESSION['username'])) {
             <?php
                 include ("connection.php"); //codes from connection.php
 
-                // Get the search term if it exists
+                //Get the search term if it exists
                 $search = isset($_GET['search']) ? mysqli_real_escape_string($con, $_GET['search']) : '';
 
                 $query = "(
@@ -67,9 +67,9 @@ if (!isset($_SESSION['username'])) {
                 )
                 ORDER BY id ASC";
 
-                $view_query = mysqli_query($con, $query); // Execute the query
+                $view_query = mysqli_query($con, $query); //Execute the query
 
-                // Check if any results were returned
+                //Check if any results were returned
                 if (mysqli_num_rows($view_query) > 0) {
                     while ($row = mysqli_fetch_assoc($view_query)) {
 
@@ -95,7 +95,6 @@ if (!isset($_SESSION['username'])) {
                     <td><?php echo "000"; echo $row['id']; ?></td>
                     <td>
                       <?php
-                        // Remove status 0. Default state is always 1 (Processing).
                         if ($row['status'] == 1) {
                           echo "<p><span><a href='status.php?id=".$row['id']."&status=2' style='background-color: #FFFF8F; padding-left: 7px; padding-right: 7px; border-radius: 5px; color: #E49B0F; text-decoration: none;'>Processing</a></span></p>";
                         } else if ($row['status'] == 2) {
@@ -103,12 +102,12 @@ if (!isset($_SESSION['username'])) {
                         } else if ($row['status'] == 3) {
                           echo "<p><span><a href='status.php?id=".$row['id']."&status=claimed' style='background-color: #bee5b0; padding-left: 7px; padding-right: 7px; border-radius: 5px; color: #006400; text-decoration: none;'>Claim</a></span></p>";
 
-                        // Insert data into the second table (claimed_users) when the status is changed to "Claim"
+                        //Insert data into the second table (claimed_users) when the status is changed to "Claim"
                         $insert_claim_query = "INSERT INTO claimed_users (studentName, studentNum, request, year_attended, course, section, time, status)
                                               VALUES ('$studentName', '$studentNum', '$request', '$year_attended', '$course', '$section', '$time', 'Claim')";
                         mysqli_query($con, $insert_claim_query);
 
-                        // Delete the claimed data from the users table
+                        //Delete the claimed data from the users table
                         $delete_query = "DELETE FROM users WHERE id = '$id'";
                         mysqli_query($con, $delete_query);
                       }

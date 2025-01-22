@@ -11,6 +11,7 @@ if(mysqli_connect_errno()){
         echo "Failed to connect to the server: MYSQL".mysqli_connect_error();
 }
 
+//for button name=save
 if (isset($_POST['save'])){
         $studentName = $_POST['studentName'];
         $studentNum = $_POST['studentNum'];
@@ -25,7 +26,7 @@ if (isset($_POST['save'])){
         echo "<script>window.location.href='popup_waiting.php'; </script>"; //gives an alert
 }
 
-// Handling save for contact form
+//for name=savecontact for contact form
 if (isset($_POST['savecontact'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta name="keywords" content="CvSU Form Request, CvSU File Request">
+    <meta name="description" content="CVSU Request Form It’s our business to know your business.">
+    <meta name="author" content="Group RedRivon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Assets/cvsulogo.png" type="image/x-icon">
     <title>POP UP</title>
 </head>
 <body>
@@ -28,7 +31,7 @@
     while ($row = mysqli_fetch_assoc($view_query)){
 
         $user_id = $row['id'];
-        $studentName = $row['studentName']; // Make sure this matches the echo statement
+        $studentName = $row['studentName'];
         $studentNum = $row['studentNum'];
         $request = $row['request'];
         $year_attended = $row['year_attended'];
@@ -53,7 +56,7 @@
         }
 
         echo "<h3>You have requested on $time</h3>";
-        echo "<h4>Your queue number is: 0000$user_id</h4>";
+        echo "<h4>Your queue number is: 000$user_id</h4>";
     }
     ?>
 <div>

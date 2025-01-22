@@ -28,20 +28,20 @@
 	</div>
 
     <?php
-	session_start(); // Start the session
+	session_start(); //Start the session
 	include 'connection.php';
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		// Query the database for user authentication
+		//Query the database for user authentication
 		$result = mysqli_query($con, "SELECT * FROM admin WHERE username ='$username' AND password = '$password'");
 		$row = mysqli_fetch_array($result);
 
 		if ($row) {
-			$_SESSION['username'] = $username;  // Set session variable
-			header('Location: ../Classes/adminPage.php');  // Redirect to admin page
+			$_SESSION['username'] = $username;  //Set session variable
+			header('Location: ../Classes/adminPage.php');  //Redirect to admin page
 		} else {
 			echo "<script>alert('Incorrect USERNAME or PASSWORD'); </script>";
 		}

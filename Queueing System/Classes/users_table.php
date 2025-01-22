@@ -7,6 +7,15 @@ if (!isset($_SESSION['username'])) {
     header('Location: http://localhost/Queueing%20System/Classes/login.php');
     exit();
 }
+
+include ("connection.php"); // Include the connection file
+
+// Retrieve admin_id based on the logged-in username
+$adminUsername = $_SESSION['username'];
+$admin_query = mysqli_query($con, "SELECT id FROM admin WHERE username = '$adminUsername'");
+$admin_row = mysqli_fetch_assoc($admin_query);
+$admin_id = $admin_row['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +62,8 @@ if (!isset($_SESSION['username'])) {
               </tr>
             </thead>
             <?php
-                include ("connection.php"); //codes from connection.php
-
-                // View query to display users table in ascending order of ID
-                $view_query = mysqli_query($con, "SELECT * FROM users ORDER BY id ASC"); // ASC means ascending order
+                //View query to display users table
+                $view_query = mysqli_query($con, "SELECT * FROM users ORDER BY id ASC"); //ASC means ascending order
 
                 while ($row = mysqli_fetch_assoc($view_query)){
 
@@ -83,7 +90,6 @@ if (!isset($_SESSION['username'])) {
                     <td><?php echo "000"; echo $row['id']; ?></td>
                     <td>
                       <?php
-                        // Remove status 0. Default state is always 1 (Processing).
                         if ($row['status'] == 1) {
                           echo "<p><span><a href='status.php?id=".$row['id']."&status=2' style='background-color: #FFFF8F; padding-left: 7px; padding-right: 7px; border-radius: 5px; color: #E49B0F; text-decoration: none;'>Processing</a></span></p>";
                         } else if ($row['status'] == 2) {
@@ -91,20 +97,19 @@ if (!isset($_SESSION['username'])) {
                         } else if ($row['status'] == 3) {
                           echo "<p><span><a href='status.php?id=".$row['id']."&status=claimed' style='background-color: #bee5b0; padding-left: 7px; padding-right: 7px; border-radius: 5px; color: #006400; text-decoration: none;'>Claim</a></span></p>";
 
-                        // Insert data into the second table (claimed_users) when the status is changed to "Claim"
-                        $insert_claim_query = "INSERT INTO claimed_users (studentName, studentNum, request, year_attended, course, section, time, status)
-                                              VALUES ('$studentName', '$studentNum', '$request', '$year_attended', '$course', '$section', '$time', 'Claim')";
-                        mysqli_query($con, $insert_claim_query);
+                          //Insert data into the second table (claimed_users) when the status is changed to "Claim"
+                          $insert_claim_query = "INSERT INTO claimed_users (studentName, studentNum, request, year_attended, course, section, time, status, admin_id)
+                                                VALUES ('$studentName', '$studentNum', '$request', '$year_attended', '$course', '$section', '$time', 'Claim', '$admin_id')";
+                          mysqli_query($con, $insert_claim_query);
 
-                        // Delete the claimed data from the users table
-                        $delete_query = "DELETE FROM users WHERE id = '$id'";
-                        mysqli_query($con, $delete_query);
+                          //Delete the claimed data from the users table
+                          $delete_query = "DELETE FROM users WHERE id = '$id'";
+                          mysqli_query($con, $delete_query);
                       }
                       ?>
                     </td>
                     <td><?php echo $row['time']; ?></td>
                     <td><?php } ?></td>
-                    </td>
                   </tr>
                 </tbody>
           </table>
@@ -124,15 +129,19 @@ if (!isset($_SESSION['username'])) {
                 <th scope='col'>Queue no.</th>
                 <th scope='col'>Status</th>
                 <th scope="col">Time</th>
+                <th scope="col">Admin</th>
               </tr>
             </thead>
             <?php
-              // Query to display claimed requests
-              $claimed_query = mysqli_query($con, "SELECT * FROM claimed_users ORDER BY id ASC"); // ACS means ascending order
+              //Query to display claimed requests and the admin username
+              $claimed_query = mysqli_query($con, "SELECT claimed_users.*, admin.username
+              FROM claimed_users LEFT JOIN admin ON claimed_users.admin_id = admin.id
+              ORDER BY claimed_users.id ASC");
 
-              while ($claimed_row = mysqli_fetch_assoc($claimed_query)){
+              while ($claimed_row = mysqli_fetch_assoc($claimed_query)) {
 
             ?>
+            <!--Display the data-->
             <tbody>
               <tr>
                 <td><?php echo $claimed_row['id']; ?></td>
@@ -145,9 +154,10 @@ if (!isset($_SESSION['username'])) {
                 <td><?php echo "000"; echo $claimed_row['id']; ?></td>
                 <td><span style="background-color: #bee5b0; padding-left: 7px; padding-right: 7px; border-radius: 5px; color: #006400; text-decoration: none;">Claimed</span></td>
                 <td><?php echo $claimed_row['time']; ?></td>
+                <td><?php echo $claimed_row['username']; ?></td>
               </tr>
             </tbody>
-            <?php } ?>
+            <?php } ?> <!---DONT REMOVE VERY IMPORTANT-->
           </table>
         </div>
       </main>

@@ -21,7 +21,7 @@
         <nav class="navigation" style="margin-top: 45px;">
                 <a href="./landingpage.php">Home</a>
                 <a href="./request.php">Request</a>
-                <a href="#">About us</a>
+                <a href="./aboutUs.php">About us</a>
                 <a href="../Classes/contact.php">Contact</a>
             </nav>
         </div>

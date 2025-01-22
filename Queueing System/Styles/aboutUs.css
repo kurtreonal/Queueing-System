@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", serif;
+}
+body {
+    background-image: url("../Assets/resized!!!!.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0px -40px;
+  }
+
+  .nav {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .CVSU {
+    font-size: 30px;
+    color: #706738;
+    user-select: none;
+    margin-right: 10%;
+    font-weight: bold;
+    display: table;
+    margin-left: -20%;
+    margin-top: 45px;
+  }
+
+  .nav-logo {
+    height: auto;
+    margin-top: 10px;
+    display: table;
+    margin-right: 5%;
+  }
+
+  .navigation a {
+    position: relative;
+    font-size: 22px;
+    color: #706738;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 45px;
+    margin-top: 20px;
+  }
+
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #FFD700;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+  }
+
+  .navigation a:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+  }
+  .paragraph{
+    text-align: center;
+    justify-items: center;
+    line-height: 1.6;
+    margin-left: 15%;
+    color: white;
+    width: 70%;
+    margin-top: 8%;
+  }
+  .paragraph h1{
+    font-size: 6.5em;
+    font-weight: bold;
+  }
+  .paragraph p{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+  }
